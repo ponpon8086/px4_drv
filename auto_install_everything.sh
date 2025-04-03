@@ -22,10 +22,17 @@ cp fwtool/fwtool _build/dump
 cp fwtool/fwinfo.tsv _build/dump
 cd _build/dump
 
-if [[ $1 == "PX-Q3U4" ]] || [[ $1 == "PX-W3U4" ]]; then
-        wget https://plex-net.co.jp/download/pxq3u4v1.4.zip
-        unzip -oj pxq3u4v1.4.zip pxq3u4v1/x64/PXQ3U4.sys && rm pxq3u4v1.4.zip
+if [[ $1 == "PX-Q3U4" ]]; then
+        wget https://plex-net.co.jp/download/202104_PX-Q3U4_Driver.zip
+        unzip -oj 202104_PX-Q3U4_Driver.zip 202104_PX-Q3U4_Driver/x64/PXQ3U4.sys && rm 202104_PX-Q3U4_Driver.zip
         ./fwtool PXQ3U4.sys it930x-firmware.bin && rm PXQ3U4.sys
+        cp it930x-firmware.bin ../../etc/
+fi
+
+if [[ $1 == "PX-W3U4" ]]; then
+        wget https://plex-net.co.jp/download/202104_PX-W3U4_Driver.zip
+        unzip -oj 202104_PX-W3U4_Driver.zip 202104_PX-W3U4_Driver/x64/PXW3U4.sys && rm 202104_PX-W3U4_Driver.zip
+        ./fwtool PXW3U4.sys it930x-firmware.bin && rm PXW3U4.sys
         cp it930x-firmware.bin ../../etc/
 fi
 
@@ -37,22 +44,29 @@ if [[ $1 == "PX-Q3PE5" ]]; then
 fi
 
 if [[ $1 == "PX-W3PE5" ]]; then
-        wget https://plex-net.co.jp/download/PX-W3PE5_DRIVER.zip
-        unzip -oj PX-W3PE5_DRIVER.zip PX-W3PE5_DRIVER/x64/PXW3PE5.sys && rm PX-W3PE5_DRIVER.zip
+        wget https://plex-net.co.jp/download/202104_PX-W3PE5_Driver.zip
+        unzip -oj 202104_PX-W3PE5_Driver.zip 202104_PX-W3PE5_Driver/x64/PXW3PE5.sys && rm 202104_PX-W3PE5_Driver.zip
         ./fwtool PXW3PE5.sys it930x-firmware.bin && rm PXW3PE5.sys
         cp it930x-firmware.bin ../../etc/
 fi
 
-if [[ $1 == "PX-MLT8PE" ]]; then
-        wget https://plex-net.co.jp/download/pxmlt8pev1.0.zip
-        unzip -oj pxmlt8pev1.0.zip pxmlt8pe/x64/PXMLT8PE5.sys && rm pxmlt8pev1.0.zip
+if [[ $1 == "PX-MLT8PE3" ]]; then
+        wget https://plex-net.co.jp/download/202104_PX-MLT8PE_Driver.zip
+        unzip -oj 202104_PX-MLT8PE_Driver.zip 202104_PX-MLT8PE_Driver/x64/PXMLT8PE3.sys && rm 202104_PX-MLT8PE_Driver.zip
+        ./fwtool PXMLT8PE3.sys it930x-firmware.bin && rm PXMLT8PE3.sys
+        cp it930x-firmware.bin ../../etc/
+fi
+
+if [[ $1 == "PX-MLT8PE5" ]]; then
+        wget https://plex-net.co.jp/download/202104_PX-MLT8PE_Driver.zip
+        unzip -oj 202104_PX-MLT8PE_Driver.zip 202104_PX-MLT8PE_Driver/x64/PXMLT8PE5.sys && rm 202104_PX-MLT8PE_Driver.zip
         ./fwtool PXMLT8PE5.sys it930x-firmware.bin && rm PXMLT8PE5.sys
         cp it930x-firmware.bin ../../etc/
 fi
 
 if [[ $1 == "PX-MLT5PE" ]]; then
-        wget https://plex-net.co.jp/download/pxmlt5pev1.3.zip
-        unzip -oj pxmlt5pev1.3.zip pxmlt5pev1.3/x64/PXMLT5PE.sys && rm pxmlt5pev1.3.zi
+        wget https://plex-net.co.jp/download/202104_PX-MLT5PE_Driver.zip
+        unzip -oj 202104_PX-MLT5PE_Driver.zip 202104_PX-MLT5PE_Driver/x64/PXMLT5PE.sys && rm 202104_PX-MLT5PE_Driver.zip
         ./fwtool PXMLT5PE.sys it930x-firmware.bin && rm PXMLT5PE.sys
         cp it930x-firmware.bin ../../etc/
 fi
